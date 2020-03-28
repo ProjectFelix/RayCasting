@@ -14,8 +14,8 @@ a {
 
 .btn-primary {
   color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+  background-color: #444;
+  border-color: #999;
 }
 
 .brd-rad-10 {
@@ -76,7 +76,8 @@ body {
 #button-box{
     margin-top: 20px;
     display: flex;
-    justify-self: center;
+    justify-content: space-around;
+    width: 100%;
 }
 .footer {
   position: absolute;

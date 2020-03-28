@@ -4,6 +4,10 @@ let ray;
 let particle;
 let xoff = 0;
 let yoff = 10000;
+let particleX;
+let particleY;
+let autoMove = true;
+var particleInput;
 
 function setup() {
     var canvas = createCanvas(this.windowWidth / 2, this.windowHeight / 2);
@@ -26,6 +30,11 @@ function setup() {
     newBoundaries.class("btn-primary brd-rad-10");
     newBoundaries.mousePressed(createBoundaries);
 
+    particleInput = createButton("Move with cursor");
+    particleInput.parent("button-box");
+    particleInput.class("btn-primary brd-rad-10 box-shadow");
+    particleInput.mousePressed(changeInput);
+
     particle = new Particle();
 }
 function createBoundaries() {
@@ -41,12 +50,24 @@ function createBoundaries() {
     }
 }
 
+function changeInput() {
+    autoMove = !autoMove;
+    if (autoMove) {
+        particleInput.html("Move with cursor");
+    } else {
+        particleInput.html("Move randomly");
+    }
+}
+
+
 function draw() {
     background(0);
     for (let wall of walls) {
         wall.show();
     }
-    particle.update(noise(xoff)*width, noise(yoff)*height);
+    particleX = (autoMove) ? noise(xoff) * width : mouseX;
+    particleY = (autoMove) ? noise(yoff) * height : mouseY;
+    particle.update(particleX, particleY);
     particle.show();
     particle.look(walls);
 

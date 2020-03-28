@@ -27,7 +27,7 @@
                 }
             }
             if (closest) {
-                stroke(255, 100);
+                stroke(255,255,100);
                 line(this.pos.x, this.pos.y, closest.x, closest.y);
             }
         }
@@ -35,7 +35,7 @@
 
     show() {
         fill(255);
-        ellipse(this.pos.x, this.pos.y, 16);
+        ellipse(this.pos.x, this.pos.y, 1);
         for (let ray of this.rays) {
             ray.show();
         }
