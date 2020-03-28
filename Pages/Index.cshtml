@@ -1,0 +1,25 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+    <div class="text-center">
+        <h1 class="display-4">Ray Casting</h1>
+        <p>My project learning about ray casting in 2D environments.</p>
+    </div>
+    <div class="sketch-container">
+        <div id="sketch-box">
+            <!-- This will hold my sketchy sketch -->
+        </div>
+        <div id="button-box"></div>
+    </div>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+        <script src="~/js/sketch.js"></script>
+        <script src="~/js/ray.js"></script>
+        <script src="~/js/boundary.js"></script>
+        <script src="~/js/particle.js"></script>
+
+   
